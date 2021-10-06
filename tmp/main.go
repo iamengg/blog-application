@@ -1,8 +1,8 @@
 package main
 
 import (
+	"blog-application/global"
 	"context"
-	"github.com/iamengg/blog-application/global"
 	"go.mongodb.org/mongo-driver/bson"
 )
 

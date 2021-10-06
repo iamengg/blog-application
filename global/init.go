@@ -1,5 +1,5 @@
 package global
 
 func init() {
-	connectToDb()
+	connectToDB()
 }
