@@ -20,9 +20,9 @@ func Test_authServer_Login(t *testing.T) {
 		t.Error("1: An error was returned: ", err.Error())
 	}
 
-	_, err = server.Login(context.Background(), &proto.LoginRequest{Login: "somethign", Password: "something"})
+	_, err = server.Login(context.Background(), &proto.LoginRequest{Login: "something", Password: "something"})
 	if err == nil {
-		t.Error("2: Error was nil")
+		t.Error("2: Error was nil", err.Error())
 	}
 
 	_, err = server.Login(context.Background(), &proto.LoginRequest{Login: "Carl", Password: "example"})

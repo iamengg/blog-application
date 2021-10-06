@@ -1,11 +1,20 @@
 package main
 
+package main
+
 import (
-	"blog-application/global"
 	"context"
-	"go.mongodb.org/mongo-driver/bson"
+	"log"
+
+	"blog-application/proto"
+	"google.golang.org/grpc"
 )
 
 func main() {
-	global.DB.Collection("user").InsertOne(context.Background(), bson.M{"name": "test"})
+	conn, err := grpc.Dial("localhost:5000", grpc.WithInsecure())
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	client := proto.NewAuthServiceClient(conn)
+	client.Signup(context.Background(), &proto.SignupRequest{Username: "Carl", Email: "carl@gmail.com", Password: "examplestring"})
 }
