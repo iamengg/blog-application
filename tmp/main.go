@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"github.com/iamengg/blog-application/global"
-	"go-mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson"
 )
 
 func main() {
